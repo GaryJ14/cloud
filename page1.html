@@ -11,51 +11,54 @@
     <a href="index.html">index</a> 
     <a href="page1.html">pagina 1</a>
     <a href="page2.html">pagina 2</a>
-    <!--emmet-->
-    <table border="1 " class="tabla-datos">
-        <tr>
-            <th>CEDULA:</th>
-            <td>0504350240</td>
-            <th>NOMBRES Y APELLIDOS</td>
-            <td>Katherin Elizabeth Quinatoa Jami</td>
-        </tr>
-        <tr>
-            <th>DOMICILIO</th>
-            <td>Latacunga</td>
-            <th>ESTADO CIVIL</th>
-            <td>Casada</td>
-        </tr>
-        <tr>
-            <th>MUSICA PREFERIDA</th>
-            <td>RegeRap</td>
-            <th>COMIDA FAVORITA</th>
-            <td>Tallarin <img height="100px" src="tallarin.webp" alt=""></td>
-        </tr>
-        <tr>
-            <th>ESTATURA</th>
-            <td>1.60</td>
-            <th>COLOR DE OJOS</th>
-            <td style="background-color: black;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        </tr>
-        <tr>
-            <th>FOTO:</th>
-            <td colspan="3">
-                <img height="100px" src="mio.jpeg" alt="">
-            </td>
-        </tr>
-    </table>
-    <br>
-    <form action="">
-        <label for="">Nombre:</label>
-        <input type="text" placeholder="Ingrese su nombre" id="txt_nombre">
-        <button onclick="saludar()">Saludar</button>
-    </form>
-    <script>
-        function saludar(){
-            var n=document.getElementById("txt_nombre").value;
-            alert("Saludos: "+n)
-        }
-    </script>
-
+    <title>Poema con Imágenes en Movimiento</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      #poem {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .image-container {
+        display: inline-block;
+        margin: 10px;
+      }
+      .image-container img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        animation: spin 2s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="poem">
+      <h1>La brisa susurra</h1>
+      <p>La brisa susurra entre los árboles,</p>
+      <p>un canto suave que calma el alma,</p>
+      <p>como caricias de un amor eterno,</p>
+      <p>que en el viento susurra su secreto.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://media.giphy.com/media/l2R08CA6u0gOfyI2I/giphy.gif" alt="Imagen 1">
+    </div>
+    <div class="image-container">
+      <img src="https://media.giphy.com/media/12bMQ8wElG1yic/giphy.gif" alt="Imagen 2">
+    </div>
+    <div class="image-container">
+      <img src="https://media.giphy.com/media/7k0eUc6wyG0qA/giphy.gif" alt="Imagen 3">
+    </div>
 </body>
 </html>
