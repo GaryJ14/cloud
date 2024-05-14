@@ -40,7 +40,7 @@
         //es un elemento que puede dar una accion 
         estForm.addEventListener("submit", async(e)=>{
             e.preventDefault();
-            await addDoc(collection(db,"UtdDemo"),{
+            await addDoc(collection(db,"Estudiantes"),{
                 nombre: estForm.Nombre.value,
                 Apellido: estForm.Apellido.value
             });
