@@ -6,6 +6,15 @@
     <title>Practica</title>
 </head>
 <body>
+    <h1>
+        FIREBASE CONEXION
+    </h1>
+    <form id="form-est">
+        <input type="text" id="Nombre" placeholder="Ingrese el Nombre del estudiante">
+        <input type="text" id="Apelldio" placeholder="Ingrese el Apelldio del estudiante">
+        <input type="text" id="codigo" placeholder="Ingrese el codigo del estudiante">
+        <button type="submit">Agregar un Estudiante</button>
+    </form>
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -26,16 +35,24 @@
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const estForm= document.getElementById("form-est");
+        //es un elemento que puede dar una accion 
+        estForm.addEventListener("submit", async(e)=>{
+            e.preventDefault();
+            await addDoc(collection(db,"UtdDemo"),{
+                nombre: estForm.Nombre.value,
+                Apellido: estForm.Apellido.value
+            });
+            estForm.reset();
+
+        });
+
     </script>
-    <h1>
-        FIREBASE CONEXION
-    </h1>
-    <form action="insert">
-        <input type="text" id="Nombre" placeholder="Ingrese el Nombre del estudiante">
-        <input type="text" id="Apelldio" placeholder="Ingrese el Apelldio del estudiante">
-        <input type="text" id="codigo" placeholder="Ingrese el codigo del estudiante">
-        <button type="submit">Agregar un Estudiante</button>
-    </form>
+
+    
+
+   <!--
 
     <h1>Hola a todos</h1>
     <h4>Somos de septimo sistemas</h4>
@@ -93,7 +110,7 @@
             color: black;
             
         }
-    </style>
+    </style> -->
 
 </body>`
 
