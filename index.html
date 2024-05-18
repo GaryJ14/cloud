@@ -36,17 +36,18 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-        const estForm= document.getElementById("form-est");
-        //es un elemento que puede dar una accion 
-        estForm.addEventListener("submit", async(e)=>{
+        const estform = document.getElementById("form-product");
+        estform.addEventListener("submit",async(e)=>{
+            // evento
             e.preventDefault();
             await addDoc(collection(db,"estudiantes"),{
-                nombre: estForm.Nombre.value,
-                Apellido: estForm.Apellido.value
+                nombre: estform.nombre.value,
+                precio: estform.precio.value,
+                codigo: estform.codigo.value
             });
-            estForm.reset();
-
+            productform.reset();
         });
+
 
     </script>
 
