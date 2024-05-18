@@ -9,7 +9,7 @@
     <h1>
         FIREBASE CONEXION
     </h1>
-    <form id="form-est">
+    <form id="form-product">
         <input type="text" id="nombre" placeholder="Ingrese el Nombre del estudiante">
         <input type="text" id="apelldio" placeholder="Ingrese el Apelldio del estudiante">
         <input type="text" id="codigo" placeholder="Ingrese el codigo del estudiante">
@@ -18,8 +18,6 @@
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import {getFirestore,collection,addDoc,onSnapshot,deleteDoc,doc}
-         from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -35,18 +33,21 @@
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const estform = document.getElementById("form-est");
-        estform.addEventListener("submit",async(e)=>{
+        // constancia de la base de datos
+        const db=getFirestore(app);
+        const productform = document.getElementById("form-product");
+        productform.addEventListener("submit",async(e)=>{
             // evento
             e.preventDefault();
-            await addDoc(collection(db,"utdDemo"),{
-                nombre: estform.nombre.value,
-                apellido: estform.apellido.value,
-                codigo: estform.codigo.value
+            await addDoc(collection(db,"producto"),{
+                nombre: productform.nombre.value,
+                precio: productform.precio.value,
+                codigo: productform.codigo.value
             });
-            estform.reset();
+            productform.reset();
         });
+
+
 
 
     </script>
