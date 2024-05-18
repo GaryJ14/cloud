@@ -10,8 +10,8 @@
         FIREBASE CONEXION
     </h1>
     <form id="form-est">
-        <input type="text" id="Nombre" placeholder="Ingrese el Nombre del estudiante">
-        <input type="text" id="Apelldio" placeholder="Ingrese el Apelldio del estudiante">
+        <input type="text" id="nombre" placeholder="Ingrese el Nombre del estudiante">
+        <input type="text" id="apelldio" placeholder="Ingrese el Apelldio del estudiante">
         <input type="text" id="codigo" placeholder="Ingrese el codigo del estudiante">
         <button type="submit">Agregar un Estudiante</button>
     </form>
@@ -42,7 +42,7 @@
             e.preventDefault();
             await addDoc(collection(db,"estudiantes"),{
                 nombre: estform.nombre.value,
-                precio: estform.precio.value,
+                apellido: estform.apellido.value,
                 codigo: estform.codigo.value
             });
             estform.reset();
