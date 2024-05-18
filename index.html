@@ -41,7 +41,7 @@
             e.preventDefault();
             await addDoc(collection(db,"estudiantes"),{
                 nombre: productform.nombre.value,
-                precio: productform.precio.value,
+                apellido: productform.apellido.value,
                 codigo: productform.codigo.value
             });
             productform.reset();
