@@ -10,11 +10,12 @@
         FIREBASE CONEXION
     </h1>
     <form id="form-product">
-        <input type="text" id="nombre" placeholder="Ingrese el Nombre del estudiante">
-        <input type="text" id="apelldio" placeholder="Ingrese el Apelldio del estudiante">
-        <input type="text" id="codigo" placeholder="Ingrese el codigo del estudiante">
-        <button type="submit">Agregar un Estudiante</button>
-    </form>
+        <input type="text" id="nombre" placeholder="Ingrese el nombre del producto">
+        <input type="text" id="precio" placeholder="Ingrese el precio del producto">
+        <input type="text" id="codigo" placeholder="Ingrese el codigo del producto">
+        <button type="submit">Agregar producto</button>
+    </form>    
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -41,7 +42,7 @@
             e.preventDefault();
             await addDoc(collection(db,"estudiantes"),{
                 nombre: productform.nombre.value,
-                apellido: productform.apellido.value,
+                precio: productform.precio.value,
                 codigo: productform.codigo.value
             });
             productform.reset();
