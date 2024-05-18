@@ -40,7 +40,7 @@
         estform.addEventListener("submit",async(e)=>{
             // evento
             e.preventDefault();
-            await addDoc(collection(db,"estudiantes"),{
+            await addDoc(collection(db,"utdDemo"),{
                 nombre: estform.nombre.value,
                 apellido: estform.apellido.value,
                 codigo: estform.codigo.value
